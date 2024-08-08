@@ -1,6 +1,7 @@
-import { Button } from 'react-bootstrap';
 import itens from '../datasets/Carrosel';
+import produtos from '../datasets/Produto';
 import Carrosel from './Carrosel';
+import Compras from './Compras';
 
 const Main = () => {
   let i = 0;
@@ -12,11 +13,8 @@ const Main = () => {
 
   return (
     <main>
-      {/* <h1 style={{ color: 'red' }}>Título</h1> */}
       <Carrosel itens={itens} />
-
-      <Button onClick={handleClick}>Enviar</Button>
-      <p>{i}</p>
+      <Compras produtos={produtos}></Compras>
     </main>
   );
 };
