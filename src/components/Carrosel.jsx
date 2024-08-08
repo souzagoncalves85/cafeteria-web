@@ -1,10 +1,12 @@
 import { Carousel, Container, Image } from 'react-bootstrap';
-import './Main.css';
+import PropTypes from 'prop-types';
+
+import './Carrosel.css';
 
 const Carrosel = ({ itens = [] }) => {
   return (
-    <Container fluid="sm">
-      <Carousel>
+    <Container fluid="sm" className="p-2">
+      <Carousel controls={false}>
         {itens.map((item, i) => {
           return (
             <Carousel.Item key={i}>
@@ -19,6 +21,10 @@ const Carrosel = ({ itens = [] }) => {
       </Carousel>
     </Container>
   );
+};
+
+Carrosel.propTypes = {
+  itens: PropTypes.array,
 };
 
 export default Carrosel;
