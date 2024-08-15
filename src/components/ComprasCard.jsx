@@ -1,7 +1,7 @@
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-const Compras = ({ produtos = [] }) => {
+const ComprasCard = ({ produtos = [] }) => {
   return (
     <Row className="p-2">
       {produtos.map((produto, i) => {
@@ -22,8 +22,8 @@ const Compras = ({ produtos = [] }) => {
   );
 };
 
-Compras.propTypes = {
+ComprasCard.propTypes = {
   produtos: PropTypes.array,
 };
 
-export default Compras;
+export default ComprasCard;
