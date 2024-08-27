@@ -13,11 +13,15 @@ const ProdutoForm = () => {
     const value = e.target.value;
     const name = e.target.name;
     setFormData({ ...formData, [name]: value });
-    console.log(value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
   };
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       {/* Título */}
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Título</Form.Label>
@@ -59,9 +63,10 @@ const ProdutoForm = () => {
           value={formData.imagemUrl}
           type="text"
           placeholder="Digite o endereço da imagem."
-          name="imagem"
+          name="imagemUrl"
         />
       </Form.Group>
+
       <Button variant="primary" type="submit">
         Enviar
       </Button>
