@@ -1,17 +1,23 @@
-import { Container } from 'react-bootstrap';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Main from './components/Main';
-
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './templates/Layout';
+import Home from './views/Home';
+import NoPage from './views/NoPage';
+import Cardapio from './views/Cardapio';
+import Login from './views/Login';
 
 function App() {
   return (
-    <Container>
-      <Header></Header>
-      <Main></Main>
-      <Footer></Footer>
-    </Container>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="cardapio" element={<Cardapio />} />
+          <Route path="login" element={<Login />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
