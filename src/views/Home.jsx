@@ -5,7 +5,7 @@ import Carrosel from '../components/Carrosel';
 import ComprasCard from '../components/ComprasCard';
 
 const Home = () => {
-  let [produtos, setProdutos] = useState([...produtosDataSet]);
+  let [produtos, ] = useState([...produtosDataSet]);
 
   return (
     <>
